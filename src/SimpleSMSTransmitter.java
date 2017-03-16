@@ -30,6 +30,7 @@ public class SimpleSMSTransmitter {
 		objSimpleSMSTransmitter.sendSingleSMS();
 		
 		System.out.println("Program terminated");
+		System.exit(0);
 	}
 
 	public void bindToSMSC() {
