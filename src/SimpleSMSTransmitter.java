@@ -27,6 +27,7 @@ public class SimpleSMSTransmitter {
 		SimpleSMSTransmitter objSimpleSMSTransmitter = new SimpleSMSTransmitter();
 		objSimpleSMSTransmitter.bindToSMSC();
 		objSimpleSMSTransmitter.sendSingleSMS();
+		objSimpleSMSTransmitter.unbindFromSMSC();
 
 		System.out.println("Program terminated");
 		System.exit(0);
@@ -46,6 +47,15 @@ public class SimpleSMSTransmitter {
 				System.out.println("Connected to SMSC");
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void unbindFromSMSC() {
+		try {
+			session.unbind();
+			System.out.println("Disconnected from SMSC");
+		} catch ( Exception e){
 			e.printStackTrace();
 		}
 	}
